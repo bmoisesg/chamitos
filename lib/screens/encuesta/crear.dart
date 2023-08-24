@@ -178,7 +178,6 @@ class _CrearEncuestaState extends State<CrearEncuesta> {
                           Switch(
                             value: boolSwitch,
                             onChanged: (bool value) {
-                              print(value);
                               setState(() {
                                 boolSwitch = value;
                               });
@@ -280,9 +279,9 @@ class _CrearEncuestaState extends State<CrearEncuesta> {
       builder: (context) {
         return AlertDialog(
           title: const Text("Encuesta Guardada"),
-          content: const Column(
+          content: Column(
             mainAxisSize: MainAxisSize.min,
-            children: [],
+            children: [Text('Codigo: ${ctrlName.text}')],
           ),
           actions: <Widget>[
             TextButton(

@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:encuentas/screens/encuesta/lista.dart';
+import 'package:encuentas/screens/encuesta/responder.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -122,9 +123,6 @@ class _LoginState extends State<Login> {
   }
 
   fntLogin() {
-    print('press btn');
-    print(ctrlUserName.text);
-    print(ctrlPass.text);
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const MostrarEncuestas()),
@@ -132,6 +130,18 @@ class _LoginState extends State<Login> {
   }
 
   fntGoEncuesta() {
-    print('press btn ir a encuesta');
+    if (ctrlCodeTest.text == "") {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('El codigo de la encuesta es obligatorio'),
+        ),
+      );
+      return;
+    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => ResponderEncuesta(code: ctrlCodeTest.text)),
+    );
   }
 }

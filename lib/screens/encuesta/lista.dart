@@ -91,8 +91,7 @@ class _MostrarEncuestasState extends State<MostrarEncuestas> {
                     children: [
                       Expanded(
                         child: Text(
-                          lista[index]['value'] +
-                              "cksdlñacj dsklacjds ackldñsja ckdslañc jdsaklñcdnsacdsa",
+                          lista[index]['value'],
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
