@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "725435769098",
+    "project_id": "encuestasmelmv",
+    "storage_bucket": "encuestasmelmv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725435769098:android:ad93e0f1222b682bc01af3",
+        "android_client_info": {
+          "package_name": "com.example.encuentas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725435769098-3hefb1gur3bpce8kkamlhrdjcfll30d7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtkCT2NhBlsLQQomZ2tAtW05deXgEZ0i0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725435769098-3hefb1gur3bpce8kkamlhrdjcfll30d7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

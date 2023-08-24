@@ -1,7 +1,10 @@
 import 'package:encuentas/screens/login.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart' show Firebase;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -15,8 +18,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 59, 41, 91)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 59, 41, 91),
+        ),
       ),
       home: const Login(),
     );

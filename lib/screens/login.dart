@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:encuentas/screens/encuesta/lista.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -34,53 +35,57 @@ class _LoginState extends State<Login> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SizedBox(height: 20),
-              const Text(
-                'Chamitos app',
-                textAlign: TextAlign.center,
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.5),
-              ),
-              const SizedBox(height: 20),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                controller: ctrlUserName,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "User name",
-                  fillColor: Colors.transparent,
-                  filled: true,
-                  isDense: true,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: 20),
+                const Text(
+                  'Chamitos app',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, letterSpacing: 1.5),
                 ),
-              ),
-              const SizedBox(height: 20),
-              TextFormField(
-                obscureText: obscureText,
-                keyboardType: TextInputType.text,
-                controller: ctrlPass,
-                decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  suffixIcon: IconButton(
-                    onPressed: fntObscureText,
-                    icon: Icon(
-                        obscureText ? Icons.visibility : Icons.visibility_off),
+                const SizedBox(height: 20),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  controller: ctrlUserName,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: "User name",
+                    fillColor: Colors.transparent,
+                    filled: true,
+                    isDense: true,
                   ),
-                  labelText: "Password",
-                  fillColor: Colors.transparent,
-                  filled: true,
-                  isDense: true,
                 ),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: fntLogin,
-                child: const Text('Log In'),
-              ),
-              const SizedBox(height: 20),
-            ],
+                const SizedBox(height: 20),
+                TextFormField(
+                  obscureText: obscureText,
+                  keyboardType: TextInputType.text,
+                  controller: ctrlPass,
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    suffixIcon: IconButton(
+                      onPressed: fntObscureText,
+                      icon: Icon(obscureText
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                    ),
+                    labelText: "Password",
+                    fillColor: Colors.transparent,
+                    filled: true,
+                    isDense: true,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: fntLogin,
+                  child: const Text('Log In'),
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
         Row(
@@ -118,6 +123,12 @@ class _LoginState extends State<Login> {
 
   fntLogin() {
     print('press btn');
+    print(ctrlUserName.text);
+    print(ctrlPass.text);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const MostrarEncuestas()),
+    );
   }
 
   fntGoEncuesta() {
