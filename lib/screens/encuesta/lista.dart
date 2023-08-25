@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
 
 import 'package:encuentas/screens/encuesta/crear.dart';
+import 'package:encuentas/screens/encuesta/resultados.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -66,13 +67,22 @@ class _MostrarEncuestasState extends State<MostrarEncuestas> {
     return Column(
       children: [
         const SizedBox(height: 40),
-        const Text('Lista de encuestas:'),
+        const Text(
+          'Lista de encuestas:',
+          style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.5),
+        ),
         const SizedBox(height: 40),
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Nombre'),
-            Text('Acciones'),
+            Text(
+              'Nombre',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
+            Text(
+              'Acciones',
+              style: TextStyle(fontStyle: FontStyle.italic),
+            ),
           ],
         ),
         const Divider(color: Color.fromARGB(255, 59, 41, 91)),
@@ -103,7 +113,8 @@ class _MostrarEncuestasState extends State<MostrarEncuestas> {
                             color: Color.fromARGB(255, 59, 41, 91),
                           )),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () =>
+                              fntResultadosEncuesta(lista[index]['id']),
                           icon: const Icon(
                             Icons.view_list,
                             color: Color.fromARGB(255, 59, 41, 91),
@@ -129,5 +140,13 @@ class _MostrarEncuestasState extends State<MostrarEncuestas> {
     DatabaseReference ref = FirebaseDatabase.instance.ref();
     await ref.child('encuestas/$id').remove();
     setState(() {});
+  }
+
+  fntResultadosEncuesta(String id) async {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => ResultadosEncuesta(idEncuesta: id)),
+    );
   }
 }

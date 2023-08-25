@@ -249,6 +249,14 @@ class _CrearEncuestaState extends State<CrearEncuesta> {
       );
       return;
     }
+    if (listaCampos.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Necesitas ingresar al menos un campo '),
+        ),
+      );
+      return;
+    }
     showDialog(
       barrierDismissible: false,
       context: context,
