@@ -1,3 +1,4 @@
+import 'package:encuentas/color.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -41,28 +42,25 @@ class _ResultadosEncuestaState extends State<ResultadosEncuesta> {
           } else if (snapshot.connectionState == ConnectionState.done) {
             return Center(
               child: FractionallySizedBox(
-                  widthFactor: 0.8,
-                  child: snapshot.data!.isNotEmpty
-                      ? _buildBody(snapshot.data!)
-                      : Container(
-                          padding: const EdgeInsets.only(top: 50, bottom: 50),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromARGB(255, 59, 41, 91)
-                                .withOpacity(0.08),
-                          ),
-                          child: const Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                Icons.warning,
-                                color: Color.fromARGB(255, 59, 41, 91),
-                              ),
-                              Text('Sin respuetas aun...'),
-                            ],
-                          ),
-                        )),
+                widthFactor: 0.8,
+                child: snapshot.data!.isNotEmpty
+                    ? _buildBody(snapshot.data!)
+                    : Container(
+                        padding: const EdgeInsets.only(top: 50, bottom: 50),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Mycolor.purple.withOpacity(0.08),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.warning, color: Mycolor.purple),
+                            const Text('Sin respuetas aun...'),
+                          ],
+                        ),
+                      ),
+              ),
             );
           } else {
             return Container();

@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
 
+import 'package:encuentas/color.dart';
 import 'package:encuentas/screens/encuesta/crear.dart';
 import 'package:encuentas/screens/encuesta/resultados.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -85,7 +86,7 @@ class _MostrarEncuestasState extends State<MostrarEncuestas> {
             ),
           ],
         ),
-        const Divider(color: Color.fromARGB(255, 59, 41, 91)),
+        Divider(color: Mycolor.purple),
         const SizedBox(height: 20),
         Expanded(
           child: ListView.builder(
@@ -95,8 +96,7 @@ class _MostrarEncuestasState extends State<MostrarEncuestas> {
                 return Container(
                   margin: const EdgeInsets.only(top: 10, bottom: 10),
                   padding: const EdgeInsets.all(10),
-                  color:
-                      const Color.fromARGB(255, 59, 41, 91).withOpacity(0.08),
+                  color: Mycolor.purple.withOpacity(0.08),
                   child: Row(
                     children: [
                       Expanded(
@@ -108,17 +108,11 @@ class _MostrarEncuestasState extends State<MostrarEncuestas> {
                       IconButton(
                           onPressed: () =>
                               fntDeleteEncuesta(lista[index]['id']),
-                          icon: const Icon(
-                            Icons.delete,
-                            color: Color.fromARGB(255, 59, 41, 91),
-                          )),
+                          icon: Icon(Icons.delete, color: Mycolor.purple)),
                       IconButton(
                           onPressed: () =>
                               fntResultadosEncuesta(lista[index]['id']),
-                          icon: const Icon(
-                            Icons.view_list,
-                            color: Color.fromARGB(255, 59, 41, 91),
-                          ))
+                          icon: Icon(Icons.view_list, color: Mycolor.purple))
                     ],
                   ),
                 );

@@ -1,16 +1,53 @@
-# encuentas
+# Chamitos
 
-A new Flutter project.
+Es una aplicacion movil donde se pueden:
+
+- Crear encuestas
+- Revisar respuesta de encuestas
+- Eliminar encuesta
+- Responder encuesta
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+```
+flutter pub get
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Librerias usadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+firebase_database: ^10.2.5
+firebase_core: ^2.15.1
+firebase_auth: ^4.8.0
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Estructura de datos
+
+Firebase storage :
+
+```
+encuestas{
+    campos[
+        {
+            nombre,
+            requerido,
+            tipo,
+            titulo
+        }, ...
+    ]
+    descripcion,
+    nombre,
+    resultados[
+        {
+            respuesta1,
+            respuesta2,
+            respuesta3
+        }
+    ]
+}
+```
+
+## Reglas
+
+- Para ingresar un encusta es necesio ingresar al menos un campo
+- El login no tiene restriccion por el momento

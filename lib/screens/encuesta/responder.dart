@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:encuentas/color.dart';
 import 'package:encuentas/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -63,18 +64,14 @@ class _ResponderEncuestaState extends State<ResponderEncuesta> {
                         padding: const EdgeInsets.only(top: 50, bottom: 50),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: const Color.fromARGB(255, 59, 41, 91)
-                              .withOpacity(0.08),
+                          color: Mycolor.purple.withOpacity(0.08),
                         ),
-                        child: const Column(
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(
-                              Icons.warning,
-                              color: Color.fromARGB(255, 59, 41, 91),
-                            ),
-                            Text('No se encontro esta encuesta'),
+                            Icon(Icons.warning, color: Mycolor.purple),
+                            const Text('No se encontro esta encuesta'),
                           ],
                         ),
                       ),
@@ -117,9 +114,9 @@ class _ResponderEncuestaState extends State<ResponderEncuesta> {
                       padding: const EdgeInsets.all(20),
                       margin: const EdgeInsets.only(bottom: 20),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color.fromARGB(255, 59, 41, 91)
-                              .withOpacity(0.08)),
+                        borderRadius: BorderRadius.circular(10),
+                        color: Mycolor.purple.withOpacity(0.08),
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
@@ -238,7 +235,7 @@ class _ResponderEncuestaState extends State<ResponderEncuesta> {
     int contador = 1;
     for (var element in textControllers) {
       var newEntrie = <String, String>{
-        "respuesta${(++contador).toString()}": element.text
+        "respuesta${(contador++).toString()}": element.text
       };
       listaResultados.addEntries(newEntrie.entries);
     }

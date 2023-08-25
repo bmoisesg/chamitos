@@ -1,3 +1,4 @@
+import 'package:encuentas/color.dart';
 import 'package:encuentas/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart' show Firebase;
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 59, 41, 91),
+          seedColor: Mycolor.purple,
         ),
       ),
       home: const Login(),
