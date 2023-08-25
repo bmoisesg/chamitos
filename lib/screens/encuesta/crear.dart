@@ -264,7 +264,12 @@ class _CrearEncuestaState extends State<CrearEncuesta> {
         return const AlertDialog(
           title: Row(
             children: [
-              Text("Ingresando encuesta..."),
+              Expanded(
+                child: Text(
+                  "Ingresando encuesta...",
+                  overflow: TextOverflow.visible,
+                ),
+              ),
               CircularProgressIndicator()
             ],
           ),

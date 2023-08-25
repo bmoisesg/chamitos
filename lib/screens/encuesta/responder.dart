@@ -225,7 +225,11 @@ class _ResponderEncuestaState extends State<ResponderEncuesta> {
           return const AlertDialog(
             title: Row(
               children: [
-                Text("Enviando respuestas..."),
+                Expanded(
+                    child: Text(
+                  "Enviando respuestas...",
+                  overflow: TextOverflow.visible,
+                )),
                 CircularProgressIndicator()
               ],
             ),

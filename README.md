@@ -51,3 +51,4 @@ encuestas{
 
 - Para ingresar un encusta es necesio ingresar al menos un campo
 - El login no tiene restriccion por el momento
+- Es necesario poseer conexion a internet para hacer las consultas
