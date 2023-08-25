@@ -7,6 +7,12 @@ Es una aplicacion movil donde se pueden:
 - Eliminar encuesta
 - Responder encuesta
 
+<p align="center">
+  <img src="./images/pag_principa.png" alt="Descripción de la imagen" width="200">
+  <img src="./images/pag_crearEncuesta.png" alt="Descripción de la imagen" width="200">
+  <img src="./images/pag_agregar_campo.png" alt="Descripción de la imagen" width="200">
+  <img src="./images/pag_resolver_encuesta.png" alt="Descripción de la imagen" width="200">
+
 ## Getting Started
 
 ```
@@ -52,3 +58,4 @@ encuestas{
 - Para ingresar un encusta es necesio ingresar al menos un campo
 - El login no tiene restriccion por el momento
 - Es necesario poseer conexion a internet para hacer las consultas
+- El codigo de la encuesta es el nombre de la ecuesta, tener cuidado con los espacios en blanco
